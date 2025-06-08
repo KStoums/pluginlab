@@ -2,6 +2,7 @@ package fr.kstars.pluginlab.events;
 
 import fr.kstars.pluginlab.utils.ChatUtils;
 import net.kyori.adventure.text.Component;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,5 +18,9 @@ public class PlayerJoinEvent implements Listener {
         Player player = event.getPlayer();
         player.teleport(WordSpawnLocation);
         player.sendMessage(ChatUtils.PluginMessagePrefix + "§fWelcome ! Don't do anything stupid :)");
+
+        if (player.isOp()) {
+            player.setGameMode(GameMode.CREATIVE);
+        }
     }
 }

@@ -1,17 +1,20 @@
 name: pluginlab
-version: '1.0.2'
+version: '1.0.3'
 author: Kstars
 main: fr.kstars.pluginlab.Main
 api-version: '1.21'
 commands:
   spawn:
-    description: Allows you to teleport you to the spawn
+    description: Teleports you to the spawn point
   teleport:
-    description: Allows you to teleport yourself or a player to another target player
+    description: Teleports yourself or another player to a target player
     aliases: tp
   heal:
-    description: Allows you to heal yourself or a player target
+    description: Heals yourself or a target player
   feed:
-    description: Allows you to feed yourself or a player target
+    description: Restores the hunger of yourself or a target player
   kill:
-    description: Allows you to kill yourself or a target player
+    description: Kills yourself or a target player
+  gamemode:
+    description: Changes your own or another player's game mode
+    aliases: gm

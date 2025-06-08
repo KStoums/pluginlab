@@ -1,6 +1,6 @@
-package fr.kstars.pluginlab.commands;
+package fr.kstars.pluginslab.commands;
 
-import fr.kstars.pluginlab.utils.ChatUtils;
+import fr.kstars.pluginslab.utils.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
@@ -36,13 +36,13 @@ public class Teleport implements CommandExecutor {
             }
 
             targetPlayer.teleport(destinationPlayer);
-            targetPlayer.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou have been teleported to §6" + destinationPlayer.getName() + "§f!");
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §6" + destinationPlayer.getName() + "§f!");
             targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
             return true;
         }
 
         player.teleport(targetPlayer);
-        player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou have been teleported to §6" + targetPlayer.getName() + "§f");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §6" + targetPlayer.getName() + "§f");
         player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
         return false;
     }

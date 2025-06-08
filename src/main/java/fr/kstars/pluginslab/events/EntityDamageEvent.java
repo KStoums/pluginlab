@@ -1,7 +1,7 @@
-package fr.kstars.pluginlab.events;
+package fr.kstars.pluginslab.events;
 
-import fr.kstars.pluginlab.commands.Spawn;
-import fr.kstars.pluginlab.utils.ChatUtils;
+import fr.kstars.pluginslab.commands.Spawn;
+import fr.kstars.pluginslab.utils.ChatUtils;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
@@ -32,6 +32,6 @@ public class EntityDamageEvent implements Listener {
         player.teleport(Spawn.WordSpawnLocation);
         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_DEATH, 1, 1);
 
-        Bukkit.broadcast(Component.text(ChatUtils.PluginMessagePrefix + "§fThe player §6" + player.getName() + " §fis dead!"));
+        Bukkit.broadcast(Component.text(ChatUtils.PluginPrefix + "§fThe player §6" + player.getName() + " §fis dead!"));
     }
 }

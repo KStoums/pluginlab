@@ -1,6 +1,6 @@
-package fr.kstars.pluginlab.commands;
+package fr.kstars.pluginslab.commands;
 
-import fr.kstars.pluginlab.utils.ChatUtils;
+import fr.kstars.pluginslab.utils.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -28,14 +28,14 @@ public class Kill implements CommandExecutor {
             }
 
             targetPlayer.damage(targetPlayer.getHealth());
-            targetPlayer.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou were §6killed §fby a member of the administration!");
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou were §6killed §fby a member of the administration!");
 
-            player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou killed §6" + targetPlayer.getName() + "§f!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou killed §6" + targetPlayer.getName() + "§f!");
             return true;
         }
 
         player.damage(player.getHealth());
-        player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou committed §6suicide§f!");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou committed §6suicide§f!");
         return true;
     }
 }

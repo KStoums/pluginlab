@@ -1,6 +1,6 @@
-package fr.kstars.pluginlab.commands;
+package fr.kstars.pluginslab.commands;
 
-import fr.kstars.pluginlab.utils.ChatUtils;
+import fr.kstars.pluginslab.utils.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Sound;
@@ -21,7 +21,7 @@ public class Spawn implements CommandExecutor {
         }
 
         player.teleport(WordSpawnLocation);
-        player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou have been §6teleported §fto the §6spawn§f.");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have been §6teleported §fto the §6spawn§f.");
         player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
         return true;
     }

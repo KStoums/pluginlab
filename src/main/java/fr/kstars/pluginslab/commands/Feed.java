@@ -1,6 +1,6 @@
-package fr.kstars.pluginlab.commands;
+package fr.kstars.pluginslab.commands;
 
-import fr.kstars.pluginlab.utils.ChatUtils;
+import fr.kstars.pluginslab.utils.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
@@ -29,16 +29,16 @@ public class Feed implements CommandExecutor {
             }
 
             targetPlayer.setFoodLevel(20);
-            targetPlayer.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou've had your fill!");
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou've had your fill!");
             targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_GENERIC_EAT, 1f, 1f);
 
-            player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou have satiated §6" + targetPlayer.getName() + "§f!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou have satiated §6" + targetPlayer.getName() + "§f!");
             return true;
         }
 
         player.setFoodLevel(20);
         player.playSound(player.getLocation(), Sound.ENTITY_GENERIC_EAT, 1f, 1f);
-        player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou've had your fill!");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou've had your fill!");
         return true;
     }
 }

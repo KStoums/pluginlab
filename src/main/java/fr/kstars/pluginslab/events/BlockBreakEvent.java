@@ -1,4 +1,4 @@
-package fr.kstars.pluginlab.events;
+package fr.kstars.pluginslab.events;
 
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;

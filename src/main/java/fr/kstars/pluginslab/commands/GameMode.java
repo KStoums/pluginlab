@@ -1,6 +1,6 @@
-package fr.kstars.pluginlab.commands;
+package fr.kstars.pluginslab.commands;
 
-import fr.kstars.pluginlab.utils.ChatUtils;
+import fr.kstars.pluginslab.utils.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
@@ -68,16 +68,16 @@ public class GameMode implements CommandExecutor {
             }
 
             targetPlayer.setGameMode(selectedGameMode);
-            targetPlayer.sendMessage(ChatUtils.PluginMessagePrefix + "§fYour GameMode has been changed to §6" + selectedGameModeName + " §fby an administration member!");
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYour GameMode has been changed to §6" + selectedGameModeName + " §fby an administration member!");
             targetPlayer.playSound(targetPlayer.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_PLACE, 1, 1);
 
-            player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou have changed §6" + targetPlayer.getName() + " §fGameMode to §6" + selectedGameModeName + "§f!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou have changed §6" + targetPlayer.getName() + " §fGameMode to §6" + selectedGameModeName + "§f!");
             return true;
         }
 
         player.setGameMode(selectedGameMode);
         player.playSound(player.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_PLACE, 1, 1);
-        player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou have changed your GameMode to §6" + selectedGameModeName + "§f!");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have changed your GameMode to §6" + selectedGameModeName + "§f!");
         return true;
     }
 }

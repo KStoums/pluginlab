@@ -1,10 +1,10 @@
-package fr.kstars.pluginlab;
+package fr.kstars.pluginslab;
 
-import fr.kstars.pluginlab.commands.*;
-import fr.kstars.pluginlab.events.BlockBreakEvent;
-import fr.kstars.pluginlab.events.BlockPlaceEvent;
-import fr.kstars.pluginlab.events.EntityDamageEvent;
-import fr.kstars.pluginlab.events.PlayerJoinEvent;
+import fr.kstars.pluginslab.commands.*;
+import fr.kstars.pluginslab.events.BlockBreakEvent;
+import fr.kstars.pluginslab.events.BlockPlaceEvent;
+import fr.kstars.pluginslab.events.EntityDamageEvent;
+import fr.kstars.pluginslab.events.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;

@@ -1,7 +1,7 @@
-name: pluginlab
-version: '1.0.3'
+name: pluginslab
+version: '1.0.4'
 author: Kstars
-main: fr.kstars.pluginlab.Main
+main: fr.kstars.pluginslab.Main
 api-version: '1.21'
 commands:
   spawn:

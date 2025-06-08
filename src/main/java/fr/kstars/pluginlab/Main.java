@@ -1,9 +1,6 @@
 package fr.kstars.pluginlab;
 
-import fr.kstars.pluginlab.commands.Feed;
-import fr.kstars.pluginlab.commands.Heal;
-import fr.kstars.pluginlab.commands.Spawn;
-import fr.kstars.pluginlab.commands.Teleport;
+import fr.kstars.pluginlab.commands.*;
 import fr.kstars.pluginlab.events.EntityDamageEvent;
 import fr.kstars.pluginlab.events.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -25,6 +22,7 @@ public final class Main extends JavaPlugin {
         Objects.requireNonNull(getCommand("teleport")).setExecutor(new Teleport());
         Objects.requireNonNull(getCommand("heal")).setExecutor(new Heal());
         Objects.requireNonNull(getCommand("feed")).setExecutor(new Feed());
+        Objects.requireNonNull(getCommand("kill")).setExecutor(new Kill());
     }
 
     @Override

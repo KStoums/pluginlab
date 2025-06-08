@@ -2,6 +2,7 @@ package fr.kstars.pluginlab.commands;
 
 import fr.kstars.pluginlab.utils.ChatUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -32,11 +33,14 @@ public class Heal implements CommandExecutor {
 
             targetPlayer.heal(Objects.requireNonNull(player.getAttribute(Attribute.MAX_HEALTH)).getBaseValue());
             targetPlayer.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou've been heal!");
+            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_SPLASH_POTION_BREAK, 1f, 1f);
+
             player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou heal §6" + targetPlayer.getName() + "§f!");
             return true;
         }
 
         player.heal(Objects.requireNonNull(player.getAttribute(Attribute.MAX_HEALTH)).getBaseValue());
+        player.playSound(player.getLocation(), Sound.ENTITY_SPLASH_POTION_BREAK, 1f, 1f);
         player.sendMessage(ChatUtils.PluginMessagePrefix + "§fYou've been heal!");
         return true;
     }

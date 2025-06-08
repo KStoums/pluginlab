@@ -1,15 +1,17 @@
 name: pluginlab
-version: '1.0'
+version: '1.0.2'
 author: Kstars
 main: fr.kstars.pluginlab.Main
 api-version: '1.21'
 commands:
   spawn:
-    description: Teleport you to the spawn
+    description: Allows you to teleport you to the spawn
   teleport:
-    description: Teleport yourself or a player to another target player
+    description: Allows you to teleport yourself or a player to another target player
     aliases: tp
   heal:
     description: Allows you to heal yourself or a player target
   feed:
     description: Allows you to feed yourself or a player target
+  kill:
+    description: Allows you to kill yourself or a target player

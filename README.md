@@ -12,7 +12,7 @@
 
 1. Clone this repository
 2. Compile the project using your preferred Java IDE or build tool (e.g. Maven or Gradle)
-3. Place the generated `pluginlab-1.0.jar` into your server's `plugins/` folder
+3. Place the generated `pluginlab-X.X.X.jar` into your server's `plugins/` folder
 4. Restart the server
 
 ## 🛠️ Current State

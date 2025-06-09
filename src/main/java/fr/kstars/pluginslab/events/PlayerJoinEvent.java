@@ -1,6 +1,7 @@
 package fr.kstars.pluginslab.events;
 
 import fr.kstars.pluginslab.models.Scoreboard;
+import fr.kstars.pluginslab.models.Tablist;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
@@ -30,6 +31,7 @@ public class PlayerJoinEvent implements Listener {
         );
         player.showTitle(joinTitle);
         Scoreboard.setScoreboard(player);
+        Tablist.setTablist(player);
         player.setGameMode(GameMode.ADVENTURE);
 
         Collection<? extends Player> onlinePlayers = Bukkit.getOnlinePlayers();

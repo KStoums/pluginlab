@@ -2,6 +2,7 @@ package fr.kstars.pluginslab.commands;
 
 import fr.kstars.pluginslab.utils.ChatUtils;
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -40,6 +41,8 @@ public class Fly implements CommandExecutor {
                 targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou can no longer fly!");
                 player.sendMessage(ChatUtils.PluginPrefix + "§fYou have §4disabled §fthe possibility to fly to §4" + targetPlayer.getName() + "§f!");
             }
+
+            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_PARROT_FLY, 1f, 1f);
             return true;
         }
 
@@ -49,6 +52,7 @@ public class Fly implements CommandExecutor {
         } else {
             player.sendMessage(ChatUtils.PluginPrefix + "§fYou can no longer fly!");
         }
+        player.playSound(player.getLocation(), Sound.ENTITY_PARROT_FLY, 1f, 1f);;
         return true;
     }
 }

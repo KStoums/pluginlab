@@ -1,10 +1,7 @@
 package fr.kstars.pluginslab;
 
 import fr.kstars.pluginslab.commands.*;
-import fr.kstars.pluginslab.events.BlockBreakEvent;
-import fr.kstars.pluginslab.events.BlockPlaceEvent;
-import fr.kstars.pluginslab.events.EntityDamageEvent;
-import fr.kstars.pluginslab.events.PlayerJoinEvent;
+import fr.kstars.pluginslab.events.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -20,6 +17,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EntityDamageEvent(), this);
         getServer().getPluginManager().registerEvents(new BlockBreakEvent(), this);
         getServer().getPluginManager().registerEvents(new BlockPlaceEvent(), this);
+        getServer().getPluginManager().registerEvents(new AsyncChatEvent(), this);
 
         //Commands
         Objects.requireNonNull(getCommand("spawn")).setExecutor(new Spawn());
@@ -29,6 +27,7 @@ public final class Main extends JavaPlugin {
         Objects.requireNonNull(getCommand("kill")).setExecutor(new Kill());
         Objects.requireNonNull(getCommand("gamemode")).setExecutor(new GameMode());
         Objects.requireNonNull(getCommand("fly")).setExecutor(new Fly());
+        Objects.requireNonNull(getCommand("kick")).setExecutor(new Kick());
     }
 
     @Override

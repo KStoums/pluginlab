@@ -20,17 +20,17 @@ public class Scoreboard {
                     invisibleScore.setScore(i);
                     continue;
                 case 5:
-                    Score playerInfoScore = objective.getScore("  §4§l● PLAYER INFO");
+                    Score playerInfoScore = objective.getScore("  §f§l● PLAYER INFO");
                     playerInfoScore.setScore(i);
                     continue;
                 case 4:
-                    Score nameScore = objective.getScore("  §4NAME: §7" + player.getName());
+                    Score nameScore = objective.getScore("  §fNAME: §7" + player.getName());
                     nameScore.setScore(i);
                 case 2:
-                    Score serverInfoScore = objective.getScore("  §9§l● SERVER INFO");
+                    Score serverInfoScore = objective.getScore("  §f§l● SERVER INFO");
                     serverInfoScore.setScore(i);
                 case 1:
-                    Score onlinePlayersScore = objective.getScore("  §9ONLINE: §7" + Bukkit.getOnlinePlayers().size());
+                    Score onlinePlayersScore = objective.getScore("  §fONLINE: §7" + Bukkit.getOnlinePlayers().size());
                     onlinePlayersScore.setScore(i);
             }
         }

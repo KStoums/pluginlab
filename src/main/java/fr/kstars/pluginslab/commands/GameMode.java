@@ -11,17 +11,18 @@ import org.jetbrains.annotations.NotNull;
 
 public class GameMode implements CommandExecutor {
 
+    private final static String GameModeSurvival = "survival";
+    private final static String GameModeSurvivalNumber = "0";
+
     private final static String GameModeCreative = "creative";
     private final static String GameModeCreativeNumber = "1";
 
-    private final static String GameModeSurvival = "survival";
-    private final static String GameModeSurvivalNumber = "2";
 
     private final static String GameModeAdventure = "adventure";
-    private final static String GameModeAdventureNumber = "3";
+    private final static String GameModeAdventureNumber = "2";
 
     private final static String GameModeSpectator = "spectator";
-    private final static String GameModeSpectatorNumber = "4";
+    private final static String GameModeSpectatorNumber = "3";
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String message, @NotNull String @NotNull [] args) {

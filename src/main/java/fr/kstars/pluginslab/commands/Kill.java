@@ -15,6 +15,11 @@ public class Kill implements CommandExecutor {
             return false;
         }
 
+        if (!player.isOp()) {
+            player.sendMessage(ChatUtils.ErrorNoPermission);
+            return false;
+        }
+
         if (args.length > 1) {
             player.sendMessage("§cUsage: /kill <player> [OPTIONAL]");
             return false;

@@ -29,31 +29,36 @@ public class GameMode implements CommandExecutor {
             return false;
         }
 
+        if (!player.isOp()) {
+            player.sendMessage(ChatUtils.ErrorNoPermission);
+            return false;
+        }
+
         if (args.length > 2) {
             player.sendMessage("§cUsage: /gamemode <gamemode> <player> [OPTIONAL]");
             return false;
         }
 
         org.bukkit.GameMode selectedGameMode = null;
-        String selectedGameModeName = "";
-        switch (args[0].toLowerCase()) {
-            case GameModeCreative, GameModeCreativeNumber:
+        String selectedGameModeName = switch (args[0].toLowerCase()) {
+            case GameModeCreative, GameModeCreativeNumber -> {
                 selectedGameMode = org.bukkit.GameMode.CREATIVE;
-                selectedGameModeName = GameModeCreative.toUpperCase();
-                break;
-            case GameModeSurvival, GameModeSurvivalNumber:
+                yield GameModeCreative.toUpperCase();
+            }
+            case GameModeSurvival, GameModeSurvivalNumber -> {
                 selectedGameMode = org.bukkit.GameMode.SURVIVAL;
-                selectedGameModeName = GameModeSurvival.toUpperCase();
-                break;
-            case GameModeAdventure, GameModeAdventureNumber:
+                yield GameModeSurvival.toUpperCase();
+            }
+            case GameModeAdventure, GameModeAdventureNumber -> {
                 selectedGameMode = org.bukkit.GameMode.ADVENTURE;
-                selectedGameModeName = GameModeAdventure.toUpperCase();
-                break;
-            case GameModeSpectator, GameModeSpectatorNumber:
+                yield GameModeAdventure.toUpperCase();
+            }
+            case GameModeSpectator, GameModeSpectatorNumber -> {
                 selectedGameMode = org.bukkit.GameMode.SPECTATOR;
-                selectedGameModeName = GameModeSpectator.toUpperCase();
-                break;
-        }
+                yield GameModeSpectator.toUpperCase();
+            }
+            default -> "";
+        };
 
         if  (selectedGameMode == null) {
             player.sendMessage("§cError: Selected GameMode doesn't exist!");

@@ -16,6 +16,11 @@ public class Feed implements CommandExecutor {
             return false;
         }
 
+        if (!player.isOp()) {
+            player.sendMessage(ChatUtils.ErrorNoPermission);
+            return false;
+        }
+
         if (args.length > 1) {
             player.sendMessage("§cUsage: /feed <player> [OPTIONAL]");
             return false;

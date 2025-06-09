@@ -3,12 +3,14 @@ package fr.kstars.pluginslab.events;
 import fr.kstars.pluginslab.models.Scoreboard;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
 import java.time.Duration;
+import java.util.Collection;
 
 import static fr.kstars.pluginslab.commands.Spawn.WordSpawnLocation;
 
@@ -28,9 +30,15 @@ public class PlayerJoinEvent implements Listener {
         );
         player.showTitle(joinTitle);
         Scoreboard.setScoreboard(player);
+        player.setGameMode(GameMode.ADVENTURE);
 
-        if (player.isOp()) {
-            player.setGameMode(GameMode.CREATIVE);
+        Collection<? extends Player> onlinePlayers = Bukkit.getOnlinePlayers();
+        for (Player onlinePlayer : onlinePlayers) {
+            Scoreboard.setScoreboard(onlinePlayer);
         }
+
+//        if (player.isOp()) {
+//            player.setGameMode(GameMode.CREATIVE);
+//        }
     }
 }

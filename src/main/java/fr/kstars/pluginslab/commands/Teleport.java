@@ -29,6 +29,11 @@ public class Teleport implements CommandExecutor {
         }
 
         if (args.length == 2) {
+            if (!player.isOp()) {
+                player.sendMessage(ChatUtils.ErrorNoPermission);
+                return false;
+            }
+
             Player destinationPlayer = Bukkit.getPlayer(args[1]);
             if (destinationPlayer == null) {
                 player.sendMessage("§cError: Player " + args[1] + " not found!");

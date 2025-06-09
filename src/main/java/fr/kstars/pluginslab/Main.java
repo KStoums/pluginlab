@@ -13,7 +13,7 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getLogger().info("PluginLab are now enabled!");
+        getLogger().info("PluginsLab are now enabled!");
 
         //Events
         getServer().getPluginManager().registerEvents(new PlayerJoinEvent(), this);
@@ -32,6 +32,6 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        getLogger().info("PluginLab are now disabled!");
+        getLogger().info("PluginsLab are now disabled!");
     }
 }

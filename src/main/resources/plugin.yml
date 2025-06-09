@@ -1,5 +1,5 @@
 name: pluginslab
-version: '1.0.4'
+version: '1.0.5'
 author: Kstars
 main: fr.kstars.pluginslab.Main
 api-version: '1.21'
@@ -18,3 +18,5 @@ commands:
   gamemode:
     description: Changes your own or another player's game mode
     aliases: gm
+  fly:
+    description: Activates or deactivates the fly to you or a target player

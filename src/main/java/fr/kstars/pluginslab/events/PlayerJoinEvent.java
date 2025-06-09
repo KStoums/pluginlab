@@ -24,7 +24,7 @@ public class PlayerJoinEvent implements Listener {
         player.teleport(WordSpawnLocation);
 
         Title joinTitle = Title.title(
-                Component.text("§6Welcome !"),
+                Component.text("§4Welcome !"),
                 Component.text("§fDon't do anything stupid :)"),
                 Title.Times.times(Duration.ofSeconds(1), Duration.ofSeconds(3), Duration.ofSeconds(1))
         );

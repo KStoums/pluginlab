@@ -21,7 +21,7 @@ public class Spawn implements CommandExecutor {
         }
 
         player.teleport(WordSpawnLocation);
-        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have been §6teleported §fto the §6spawn§f.");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have been §4teleported §fto the §4spawn§f.");
         player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
         return true;
     }

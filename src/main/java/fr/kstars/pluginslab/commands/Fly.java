@@ -2,14 +2,13 @@ package fr.kstars.pluginslab.commands;
 
 import fr.kstars.pluginslab.utils.ChatUtils;
 import org.bukkit.Bukkit;
-import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class Feed implements CommandExecutor {
+public class Fly implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String message, @NotNull String @NotNull [] args) {
         if (!(sender instanceof Player player)) {
@@ -22,7 +21,7 @@ public class Feed implements CommandExecutor {
         }
 
         if (args.length > 1) {
-            player.sendMessage("§cUsage: /feed <player> [OPTIONAL]");
+            player.sendMessage("§cUsage: /fly <player> [OPTIONAL]");
             return false;
         }
 
@@ -33,17 +32,23 @@ public class Feed implements CommandExecutor {
                 return false;
             }
 
-            targetPlayer.setFoodLevel(20);
-            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou've had your fill!");
-            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_GENERIC_EAT, 1f, 1f);
-
-            player.sendMessage(ChatUtils.PluginPrefix + "§fYou have satiated §4" + targetPlayer.getName() + "§f!");
+            targetPlayer.setAllowFlight(!targetPlayer.getAllowFlight());
+            if (targetPlayer.getAllowFlight()) {
+                targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou can now fly!");
+                player.sendMessage(ChatUtils.PluginPrefix + "§fYou have §aactivated §fthe possibility to fly to §4" + targetPlayer.getName() + "§f!");
+            } else {
+                targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou can no longer fly!");
+                player.sendMessage(ChatUtils.PluginPrefix + "§fYou have §4disabled §fthe possibility to fly to §4" + targetPlayer.getName() + "§f!");
+            }
             return true;
         }
 
-        player.setFoodLevel(20);
-        player.playSound(player.getLocation(), Sound.ENTITY_GENERIC_EAT, 1f, 1f);
-        player.sendMessage(ChatUtils.PluginPrefix + "§fYou've had your fill!");
+        player.setAllowFlight(!player.getAllowFlight());
+        if (player.getAllowFlight()) {
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou can now fly!");
+        } else {
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou can no longer fly!");
+        }
         return true;
     }
 }

@@ -24,30 +24,30 @@ public class Teleport implements CommandExecutor {
         Player targetPlayer = Bukkit.getPlayer(args[0]);
 
         if (targetPlayer == null) {
-            player.sendMessage("§cError: Player " + args[0] + " not found!");
+            player.sendMessage(ChatUtils.ErrPlayerIsNotOnline.replace("%player%", args[0]));
             return false;
         }
 
         if (args.length == 2) {
             if (!player.isOp()) {
-                player.sendMessage(ChatUtils.ErrorNoPermission);
+                player.sendMessage(ChatUtils.ErrCmdNoPermission);
                 return false;
             }
 
             Player destinationPlayer = Bukkit.getPlayer(args[1]);
             if (destinationPlayer == null) {
-                player.sendMessage("§cError: Player " + args[1] + " not found!");
+                player.sendMessage(ChatUtils.ErrPlayerIsNotOnline.replace("%player%", args[1]));
                 return false;
             }
 
             targetPlayer.teleport(destinationPlayer);
-            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §6" + destinationPlayer.getName() + "§f!");
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §4" + destinationPlayer.getName() + "§f!");
             targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
             return true;
         }
 
         player.teleport(targetPlayer);
-        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §6" + targetPlayer.getName() + "§f");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §4" + targetPlayer.getName() + "§f");
         player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
         return false;
     }

@@ -28,6 +28,7 @@ public final class Main extends JavaPlugin {
         Objects.requireNonNull(getCommand("feed")).setExecutor(new Feed());
         Objects.requireNonNull(getCommand("kill")).setExecutor(new Kill());
         Objects.requireNonNull(getCommand("gamemode")).setExecutor(new GameMode());
+        Objects.requireNonNull(getCommand("fly")).setExecutor(new Fly());
     }
 
     @Override

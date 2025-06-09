@@ -20,7 +20,7 @@ public class Heal implements CommandExecutor {
         }
 
         if (!player.isOp()) {
-            player.sendMessage(ChatUtils.ErrorNoPermission);
+            player.sendMessage(ChatUtils.ErrCmdNoPermission);
             return false;
         }
 
@@ -32,7 +32,7 @@ public class Heal implements CommandExecutor {
         if (args.length == 1) {
             Player targetPlayer = Bukkit.getPlayer(args[0]);
             if  (targetPlayer == null) {
-                player.sendMessage("§cError: Player " + args[0] + " not found!");
+                player.sendMessage(ChatUtils.ErrPlayerIsNotOnline.replace("%player%", args[0]));
                 return false;
             }
 
@@ -40,7 +40,7 @@ public class Heal implements CommandExecutor {
             targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou've been heal!");
             targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_SPLASH_POTION_BREAK, 1f, 1f);
 
-            player.sendMessage(ChatUtils.PluginPrefix + "§fYou heal §6" + targetPlayer.getName() + "§f!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou heal §4" + targetPlayer.getName() + "§f!");
             return true;
         }
 

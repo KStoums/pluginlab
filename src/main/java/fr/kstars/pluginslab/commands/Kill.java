@@ -16,7 +16,7 @@ public class Kill implements CommandExecutor {
         }
 
         if (!player.isOp()) {
-            player.sendMessage(ChatUtils.ErrorNoPermission);
+            player.sendMessage(ChatUtils.ErrCmdNoPermission);
             return false;
         }
 
@@ -28,19 +28,19 @@ public class Kill implements CommandExecutor {
         if (args.length == 1) {
             Player targetPlayer = Bukkit.getPlayer(args[0]);
             if (targetPlayer == null) {
-                player.sendMessage("§cError: Player " + args[0] + " not found!");
+                player.sendMessage(ChatUtils.ErrPlayerIsNotOnline.replace("%player%", args[0]));
                 return false;
             }
 
             targetPlayer.damage(targetPlayer.getHealth());
-            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou were §6killed §fby a member of the administration!");
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou were §4killed §fby a member of the administration!");
 
-            player.sendMessage(ChatUtils.PluginPrefix + "§fYou killed §6" + targetPlayer.getName() + "§f!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou killed §4" + targetPlayer.getName() + "§f!");
             return true;
         }
 
         player.damage(player.getHealth());
-        player.sendMessage(ChatUtils.PluginPrefix + "§fYou committed §6suicide§f!");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou committed §4suicide§f!");
         return true;
     }
 }

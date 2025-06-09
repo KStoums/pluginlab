@@ -10,7 +10,7 @@ public class Scoreboard {
     public static void setScoreboard(Player player) {
         ScoreboardManager scoreboardManager = Bukkit.getScoreboardManager();
         org.bukkit.scoreboard.Scoreboard newScoreboard = scoreboardManager.getNewScoreboard();
-        Objective objective = newScoreboard.registerNewObjective("scoreboard", Criteria.DUMMY, Component.text("§6§lPLUGINSLAB"));
+        Objective objective = newScoreboard.registerNewObjective("scoreboard", Criteria.DUMMY, Component.text("§4§lPLUGINSLAB"));
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         for (int i = 6; i >= 0; i--) {
@@ -20,14 +20,14 @@ public class Scoreboard {
                     invisibleScore.setScore(i);
                     continue;
                 case 5:
-                    Score playerInfoScore = objective.getScore("  §6§l⬤ PLAYER INFO");
+                    Score playerInfoScore = objective.getScore("  §4§l● PLAYER INFO");
                     playerInfoScore.setScore(i);
                     continue;
                 case 4:
-                    Score nameScore = objective.getScore("  §6NAME: §7" + player.getName());
+                    Score nameScore = objective.getScore("  §4NAME: §7" + player.getName());
                     nameScore.setScore(i);
                 case 2:
-                    Score serverInfoScore = objective.getScore("  §9§l⬤ SERVER INFO");
+                    Score serverInfoScore = objective.getScore("  §9§l● SERVER INFO");
                     serverInfoScore.setScore(i);
                 case 1:
                     Score onlinePlayersScore = objective.getScore("  §9ONLINE: §7" + Bukkit.getOnlinePlayers().size());

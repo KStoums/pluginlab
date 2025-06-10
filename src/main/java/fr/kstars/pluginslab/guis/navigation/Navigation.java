@@ -1,14 +1,11 @@
 package fr.kstars.pluginslab.guis.navigation;
 
+import fr.kstars.pluginslab.models.ItemGui;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-
-import java.util.List;
 
 public class Navigation {
     public static final String NavigationMenuName = "§4§lNavigation Menu";
@@ -21,46 +18,37 @@ public class Navigation {
     public static void openNavigationMenu(Player player) {
         Inventory navigationMenu = Bukkit.createInventory(null, 27, Component.text(NavigationMenuName));
 
-        navigationMenu.setItem(12, createLosPollosHermanosItem());
-        navigationMenu.setItem(13, createLaboratoryItem());
-        navigationMenu.setItem(14, createBetterCallSaulItem());
+        navigationMenu.setItem(createLosPollosHermanosItem().getItemSlot(), createLosPollosHermanosItem().toItemStack());
+        navigationMenu.setItem(createLaboratoryItem().getItemSlot(), createLaboratoryItem().toItemStack());
+        navigationMenu.setItem(createBetterCallSaulItem().getItemSlot(), createBetterCallSaulItem().toItemStack());
 
         player.openInventory(navigationMenu);
     }
 
-    private static ItemStack createLaboratoryItem() {
-        ItemStack laboratoryItem = new ItemStack(Material.BREWING_STAND);
-        ItemMeta laboratoryItemMeta = laboratoryItem.getItemMeta();
-        laboratoryItemMeta.displayName(Component.text(LaboratoryItemName));
-        laboratoryItemMeta.lore(List.of(
-                Component.text("§8The emblematic laboratory from the Breaking Bad series, not to mention the caravan")
-        ));
-
-        laboratoryItem.setItemMeta(laboratoryItemMeta);
-        return  laboratoryItem;
+    private static ItemGui createLaboratoryItem() {
+        return new ItemGui(
+                Material.BREWING_STAND,
+                LaboratoryItemName,
+                "§8The emblematic laboratory from the Breaking Bad series, not to mention the caravan",
+                13,
+                1);
     }
 
-    private static ItemStack createLosPollosHermanosItem() {
-        ItemStack chickenItem = new ItemStack(Material.COOKED_CHICKEN);
-        ItemMeta chickenItemMeta = chickenItem.getItemMeta();
-        chickenItemMeta.displayName(Component.text(LosPollosHermanosItemName));
-        chickenItemMeta.lore(List.of(
-                Component.text("§8Emblematic restaurant from the Breaking Bad series")
-        ));
-
-        chickenItem.setItemMeta(chickenItemMeta);
-        return  chickenItem;
+    private static ItemGui createLosPollosHermanosItem() {
+        return new ItemGui(
+                Material.COOKED_CHICKEN,
+                LosPollosHermanosItemName,
+                "§8The Emblematic restaurant from the Breaking Bad series",
+                12,
+                1);
     }
 
-    private static ItemStack createBetterCallSaulItem() {
-        ItemStack paperItem = new ItemStack(Material.PAPER);
-        ItemMeta paperItemMeta = paperItem.getItemMeta();
-        paperItemMeta.displayName(Component.text(BetterCallSaulOfficeItemName));
-        paperItemMeta.lore(List.of(
-                Component.text("§8Very important place in the Breaking Bad series")
-        ));
-
-        paperItem.setItemMeta(paperItemMeta);
-        return  paperItem;
+    private static ItemGui createBetterCallSaulItem() {
+        return new ItemGui(
+                Material.PAPER,
+                BetterCallSaulOfficeItemName,
+                "§8Very important place in the Breaking Bad series",
+                14,
+                1);
     }
 }

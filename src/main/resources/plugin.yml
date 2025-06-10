@@ -1,5 +1,5 @@
 name: pluginslab
-version: '1.0.7'
+version: '1.0.8'
 author: Kstars
 main: fr.kstars.pluginslab.Main
 api-version: '1.21'

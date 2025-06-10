@@ -21,7 +21,7 @@ public class WorldChange implements CommandExecutor {
         }
 
         if (args.length == 0) {
-            player.sendMessage("§cUsage: /worldchange <worldName>");
+            player.sendMessage("§4Usage: /worldchange <worldName>");
             return false;
         }
 
@@ -32,7 +32,7 @@ public class WorldChange implements CommandExecutor {
 
             world = loadWorld(worldName);
             if (world == null) {
-                player.sendMessage("§cError: That world doesn't exist.");
+                player.sendMessage("§4Error: That world doesn't exist.");
                 return false;
             }
         }

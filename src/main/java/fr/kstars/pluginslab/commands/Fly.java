@@ -22,7 +22,7 @@ public class Fly implements CommandExecutor {
         }
 
         if (args.length > 1) {
-            player.sendMessage("§cUsage: /fly <player> [OPTIONAL]");
+            player.sendMessage("§4Usage: /fly <player> [OPTIONAL]");
             return false;
         }
 

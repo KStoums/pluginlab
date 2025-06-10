@@ -25,7 +25,7 @@ public class Heal implements CommandExecutor {
         }
 
         if (args.length > 1) {
-            player.sendMessage("§cUsage: /heal <player> [OPTIONAL]");
+            player.sendMessage("§4Usage: /heal <player> [OPTIONAL]");
             return false;
         }
 

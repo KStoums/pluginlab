@@ -36,7 +36,7 @@ public class GameMode implements CommandExecutor {
         }
 
         if (args.length > 2) {
-            player.sendMessage("§cUsage: /gamemode <gamemode> <player> [OPTIONAL]");
+            player.sendMessage("§4Usage: /gamemode <gamemode> <player> [OPTIONAL]");
             return false;
         }
 
@@ -62,7 +62,7 @@ public class GameMode implements CommandExecutor {
         };
 
         if  (selectedGameMode == null) {
-            player.sendMessage("§cError: Selected GameMode doesn't exist.");
+            player.sendMessage("§4Error: Selected GameMode doesn't exist.");
             return false;
         }
 

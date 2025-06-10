@@ -22,7 +22,7 @@ public class Feed implements CommandExecutor {
         }
 
         if (args.length > 1) {
-            player.sendMessage("§cUsage: /feed <player> [OPTIONAL]");
+            player.sendMessage("§4Usage: /feed <player> [OPTIONAL]");
             return false;
         }
 

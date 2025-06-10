@@ -17,7 +17,7 @@ public class Teleport implements CommandExecutor {
         }
 
         if (args.length == 0 || args.length > 2) {
-            player.sendMessage("§cUsage: /teleport <player> <player> [OPTIONAL]");
+            player.sendMessage("§4Usage: /teleport <player> <player> [OPTIONAL]");
             return false;
         }
 

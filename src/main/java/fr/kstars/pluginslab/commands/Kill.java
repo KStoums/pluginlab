@@ -21,7 +21,7 @@ public class Kill implements CommandExecutor {
         }
 
         if (args.length > 1) {
-            player.sendMessage("§cUsage: /kill <player> [OPTIONAL]");
+            player.sendMessage("§4Usage: /kill <player> [OPTIONAL]");
             return false;
         }
 

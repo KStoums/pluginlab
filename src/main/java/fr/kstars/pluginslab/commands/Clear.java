@@ -18,7 +18,7 @@ public class Clear implements CommandExecutor {
         }
 
         if (args.length > 1) {
-            player.sendMessage("§cUsage: /clear <player> [OPTIONAL]");
+            player.sendMessage("§4Usage: /clear <player> [OPTIONAL]");
             return false;
         }
 
@@ -32,8 +32,8 @@ public class Clear implements CommandExecutor {
             targetPlayer.getInventory().clear();
             PlayerJoinEvent.giveJoinItems(targetPlayer);
 
-            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYour inventory has been §4deleted §f by a member of the §4administration§f.");
-            targetPlayer.playSound(targetPlayer.getLocation(), Sound.BLOCK_ANVIL_DESTROY, 1, 1);
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYour inventory has been §4deleted §fby a member of the administration.");
+            targetPlayer.playSound(targetPlayer.getLocation(), Sound.BLOCK_ANVIL_PLACE, 1, 1);
 
             player.sendMessage(ChatUtils.PluginPrefix + "§fYou've §4deleted §fthe §4" + targetPlayer.getName() + "' §finventory.");
             return true;
@@ -42,7 +42,7 @@ public class Clear implements CommandExecutor {
         player.getInventory().clear();
         PlayerJoinEvent.giveJoinItems(player);
         player.sendMessage(ChatUtils.PluginPrefix + "§fYou've §4deleted §fyour inventory.");
-        player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_BREAK, 1, 1);
+        player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_PLACE, 1, 1);
         return true;
     }
 }

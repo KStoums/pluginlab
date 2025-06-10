@@ -24,7 +24,7 @@ public class Kick implements CommandExecutor {
         }
 
         if (args.length == 0) {
-            player.sendMessage("§cUsage: /kick <player> <reason>");
+            player.sendMessage("§4Usage: /kick <player> <reason>");
             return false;
         }
 

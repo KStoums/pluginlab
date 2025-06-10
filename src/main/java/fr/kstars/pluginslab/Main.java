@@ -17,6 +17,7 @@ public final class Main extends JavaPlugin {
 
         //Events
         getServer().getPluginManager().registerEvents(new PlayerJoinEvent(), this);
+        getServer().getPluginManager().registerEvents(new PlayerQuitEvent(), this);
         getServer().getPluginManager().registerEvents(new EntityDamageEvent(), this);
         getServer().getPluginManager().registerEvents(new BlockBreakEvent(), this);
         getServer().getPluginManager().registerEvents(new BlockPlaceEvent(), this);

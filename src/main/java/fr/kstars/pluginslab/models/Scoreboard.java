@@ -5,6 +5,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
 
+import java.util.Collection;
+
 public class Scoreboard {
 
     public static void setScoreboard(Player player) {
@@ -36,5 +38,12 @@ public class Scoreboard {
         }
 
         player.setScoreboard(newScoreboard);
+    }
+
+    public static void updatePlayersScoreboard() {
+        Collection<? extends Player> onlinePlayers = Bukkit.getOnlinePlayers();
+        for (Player onlinePlayer : onlinePlayers) {
+            Scoreboard.setScoreboard(onlinePlayer);
+        }
     }
 }

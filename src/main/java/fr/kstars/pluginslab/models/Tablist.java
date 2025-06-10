@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 public class Tablist {
 
     public static void setTablist(Player player) {
-        Component header = Component.text("§7§m───────§4§lPLUGINSLAB§7§m───────");
+        Component header = Component.text("§8§m───────§4§lPLUGINSLAB§8§m───────");
         Component footer = Component.text("§fPlugins Laboraty server, don't do anything stupid!");
 
         player.sendPlayerListHeaderAndFooter(header, footer);

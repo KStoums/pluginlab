@@ -32,6 +32,6 @@ public class EntityDamageEvent implements Listener {
         player.teleport(Spawn.WordSpawnLocation);
         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_DEATH, 1, 1);
 
-        Bukkit.broadcast(Component.text(ChatUtils.PluginPrefix + "§fThe player §4" + player.getName() + " §fis dead!"));
+        Bukkit.broadcast(Component.text(ChatUtils.PluginPrefix + "§fThe player §4" + player.getName() + " §fis dead."));
     }
 }

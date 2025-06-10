@@ -33,14 +33,14 @@ public class Kill implements CommandExecutor {
             }
 
             targetPlayer.damage(targetPlayer.getHealth());
-            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou were §4killed §fby a member of the administration!");
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou were §4killed §fby a member of the administration.");
 
-            player.sendMessage(ChatUtils.PluginPrefix + "§fYou killed §4" + targetPlayer.getName() + "§f!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou killed §4" + targetPlayer.getName() + "§f.");
             return true;
         }
 
         player.damage(player.getHealth());
-        player.sendMessage(ChatUtils.PluginPrefix + "§fYou committed §4suicide§f!");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou committed §4suicide§f.");
         return true;
     }
 }

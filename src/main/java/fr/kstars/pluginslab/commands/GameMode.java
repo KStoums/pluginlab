@@ -62,7 +62,7 @@ public class GameMode implements CommandExecutor {
         };
 
         if  (selectedGameMode == null) {
-            player.sendMessage("§cError: Selected GameMode doesn't exist!");
+            player.sendMessage("§cError: Selected GameMode doesn't exist.");
             return false;
         }
 
@@ -74,16 +74,16 @@ public class GameMode implements CommandExecutor {
             }
 
             targetPlayer.setGameMode(selectedGameMode);
-            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYour GameMode has been changed to §4" + selectedGameModeName + " §fby an administration member!");
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYour GameMode has been changed to §4" + selectedGameModeName + " §fby an administration member.");
             targetPlayer.playSound(targetPlayer.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_PLACE, 1, 1);
 
-            player.sendMessage(ChatUtils.PluginPrefix + "§fYou have changed §4" + targetPlayer.getName() + " §fGameMode to §4" + selectedGameModeName + "§f!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou have changed §4" + targetPlayer.getName() + " §fGameMode to §4" + selectedGameModeName + "§f.");
             return true;
         }
 
         player.setGameMode(selectedGameMode);
         player.playSound(player.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_PLACE, 1, 1);
-        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have changed your GameMode to §4" + selectedGameModeName + "§f!");
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have changed your GameMode to §4" + selectedGameModeName + "§f.");
         return true;
     }
 }

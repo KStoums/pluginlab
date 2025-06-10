@@ -41,14 +41,14 @@ public class Teleport implements CommandExecutor {
             }
 
             targetPlayer.teleport(destinationPlayer);
-            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §4" + destinationPlayer.getName() + "§f!");
-            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §4" + destinationPlayer.getName() + "§f.");
+            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
             return true;
         }
 
         player.teleport(targetPlayer);
-        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §4" + targetPlayer.getName() + "§f");
-        player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1f, 1f);
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou have been teleported to §4" + targetPlayer.getName() + "§f.");
+        player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
         return false;
     }
 }

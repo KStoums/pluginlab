@@ -1,5 +1,5 @@
 name: pluginslab
-version: '1.0.6'
+version: '1.0.7'
 author: Kstars
 main: fr.kstars.pluginslab.Main
 api-version: '1.21'
@@ -22,3 +22,8 @@ commands:
     description: Activates or deactivates the fly to you or a target player
   kick:
     description: Exclude a person from the server
+  worldchange:
+    description: Transport yourself from one world to another
+  clear:
+    description: Delete your own or a target player's inventory
+    aliases: ci

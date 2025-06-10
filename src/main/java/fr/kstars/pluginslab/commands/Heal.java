@@ -37,16 +37,16 @@ public class Heal implements CommandExecutor {
             }
 
             targetPlayer.heal(Objects.requireNonNull(player.getAttribute(Attribute.MAX_HEALTH)).getBaseValue());
-            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou've been heal!");
-            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_SPLASH_POTION_BREAK, 1f, 1f);
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou've been heal.");
+            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_SPLASH_POTION_BREAK, 1, 1);
 
-            player.sendMessage(ChatUtils.PluginPrefix + "§fYou heal §4" + targetPlayer.getName() + "§f!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou heal §4" + targetPlayer.getName() + "§f.");
             return true;
         }
 
         player.heal(Objects.requireNonNull(player.getAttribute(Attribute.MAX_HEALTH)).getBaseValue());
-        player.playSound(player.getLocation(), Sound.ENTITY_SPLASH_POTION_BREAK, 1f, 1f);
-        player.sendMessage(ChatUtils.PluginPrefix + "§fYou've been heal!");
+        player.playSound(player.getLocation(), Sound.ENTITY_SPLASH_POTION_BREAK, 1, 1);
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou've been heal.");
         return true;
     }
 }

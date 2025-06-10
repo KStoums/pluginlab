@@ -36,23 +36,23 @@ public class Fly implements CommandExecutor {
             targetPlayer.setAllowFlight(!targetPlayer.getAllowFlight());
             if (targetPlayer.getAllowFlight()) {
                 targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou can now fly!");
-                player.sendMessage(ChatUtils.PluginPrefix + "§fYou have §aactivated §fthe possibility to fly to §4" + targetPlayer.getName() + "§f!");
+                player.sendMessage(ChatUtils.PluginPrefix + "§fYou have §aactivated §fthe possibility to fly to §4" + targetPlayer.getName() + "§f.");
             } else {
                 targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou can no longer fly!");
-                player.sendMessage(ChatUtils.PluginPrefix + "§fYou have §4disabled §fthe possibility to fly to §4" + targetPlayer.getName() + "§f!");
+                player.sendMessage(ChatUtils.PluginPrefix + "§fYou have §4disabled §fthe possibility to fly to §4" + targetPlayer.getName() + "§f.");
             }
 
-            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_PARROT_FLY, 1f, 1f);
+            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_PARROT_FLY, 1, 1);
             return true;
         }
 
         player.setAllowFlight(!player.getAllowFlight());
         if (player.getAllowFlight()) {
-            player.sendMessage(ChatUtils.PluginPrefix + "§fYou can now fly!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou can now fly.");
         } else {
-            player.sendMessage(ChatUtils.PluginPrefix + "§fYou can no longer fly!");
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou can no longer fly.");
         }
-        player.playSound(player.getLocation(), Sound.ENTITY_PARROT_FLY, 1f, 1f);;
+        player.playSound(player.getLocation(), Sound.ENTITY_PARROT_FLY, 1, 1);
         return true;
     }
 }

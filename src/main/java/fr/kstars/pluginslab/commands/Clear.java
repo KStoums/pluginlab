@@ -1,5 +1,6 @@
 package fr.kstars.pluginslab.commands;
 
+import fr.kstars.pluginslab.events.PlayerJoinEvent;
 import fr.kstars.pluginslab.utils.ChatUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
@@ -9,20 +10,15 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class Feed implements CommandExecutor {
+public class Clear implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String message, @NotNull String @NotNull [] args) {
         if (!(sender instanceof Player player)) {
             return false;
         }
 
-        if (!player.isOp()) {
-            player.sendMessage(ChatUtils.ErrCmdNoPermission);
-            return false;
-        }
-
         if (args.length > 1) {
-            player.sendMessage("§cUsage: /feed <player> [OPTIONAL]");
+            player.sendMessage("§cUsage: /clear <player> [OPTIONAL]");
             return false;
         }
 
@@ -33,17 +29,20 @@ public class Feed implements CommandExecutor {
                 return false;
             }
 
-            targetPlayer.setFoodLevel(20);
-            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYou've had your fill.");
-            targetPlayer.playSound(targetPlayer.getLocation(), Sound.ENTITY_GENERIC_EAT, 1, 1);
+            targetPlayer.getInventory().clear();
+            PlayerJoinEvent.giveJoinItems(targetPlayer);
 
-            player.sendMessage(ChatUtils.PluginPrefix + "§fYou have satiated §4" + targetPlayer.getName() + "§f.");
+            targetPlayer.sendMessage(ChatUtils.PluginPrefix + "§fYour inventory has been §4deleted §f by a member of the §4administration§f.");
+            targetPlayer.playSound(targetPlayer.getLocation(), Sound.BLOCK_ANVIL_DESTROY, 1, 1);
+
+            player.sendMessage(ChatUtils.PluginPrefix + "§fYou've §4deleted §fthe §4" + targetPlayer.getName() + "' §finventory.");
             return true;
         }
 
-        player.setFoodLevel(20);
-        player.playSound(player.getLocation(), Sound.ENTITY_GENERIC_EAT, 1, 1);
-        player.sendMessage(ChatUtils.PluginPrefix + "§fYou've had your fill.");
+        player.getInventory().clear();
+        PlayerJoinEvent.giveJoinItems(player);
+        player.sendMessage(ChatUtils.PluginPrefix + "§fYou've §4deleted §fyour inventory.");
+        player.playSound(player.getLocation(), Sound.BLOCK_ANVIL_BREAK, 1, 1);
         return true;
     }
 }

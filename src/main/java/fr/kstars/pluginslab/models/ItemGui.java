@@ -7,21 +7,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
-public class ItemGui {
-
-    private final Material itemMaterial;
-    private final String itemName;
-    private final String itemLore;
-    private final Integer itemSlot;
-    private final Integer itemAmount;
-
-    public ItemGui(Material itemMaterial, String itemName, String itemLore, Integer itemSlot, Integer itemAmount) {
-        this.itemMaterial = itemMaterial;
-        this.itemName = itemName;
-        this.itemLore = itemLore;
-        this.itemSlot = itemSlot;
-        this.itemAmount = itemAmount;
-    }
+public record ItemGui(Material itemMaterial, String itemName, String itemLore, Integer itemSlot, Integer itemAmount) {
 
     public ItemStack toItemStack() {
         ItemStack guiItem = new ItemStack(this.itemMaterial);
@@ -35,25 +21,5 @@ public class ItemGui {
 
         guiItem.setItemMeta(guiItemMeta);
         return guiItem;
-    }
-
-    public Material getItemMaterial() {
-        return itemMaterial;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public String getItemLore() {
-        return itemLore;
-    }
-
-    public Integer getItemSlot() {
-        return itemSlot;
-    }
-
-    public Integer getItemAmount() {
-        return itemAmount;
     }
 }

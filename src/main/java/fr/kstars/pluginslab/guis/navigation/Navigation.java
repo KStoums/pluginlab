@@ -8,19 +8,19 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 public class Navigation {
-    public static final String NavigationMenuName = "§4§lNavigation Menu";
-    public static final String CompassNavigationName = "§4§lNavigation";
+    public static final String NavigationMenuName = "§4Navigation Menu";
+    public static final String CompassNavigationName = "§4Navigation";
 
-    public static final String LaboratoryItemName = "§4§lLaboratory";
-    public static final String BetterCallSaulOfficeItemName = "§4§lBetter Call Saul Office";
-    public static final String LosPollosHermanosItemName = "§4§lLos Pollos Hermanos";
+    public static final String LaboratoryItemName = "§4Laboratory";
+    public static final String BetterCallSaulOfficeItemName = "§4Better Call Saul Office";
+    public static final String LosPollosHermanosItemName = "§4Los Pollos Hermanos";
 
     public static void openNavigationMenu(Player player) {
         Inventory navigationMenu = Bukkit.createInventory(null, 27, Component.text(NavigationMenuName));
 
-        navigationMenu.setItem(createLosPollosHermanosItem().getItemSlot(), createLosPollosHermanosItem().toItemStack());
-        navigationMenu.setItem(createLaboratoryItem().getItemSlot(), createLaboratoryItem().toItemStack());
-        navigationMenu.setItem(createBetterCallSaulItem().getItemSlot(), createBetterCallSaulItem().toItemStack());
+        navigationMenu.setItem(createLosPollosHermanosItem().itemSlot(), createLosPollosHermanosItem().toItemStack());
+        navigationMenu.setItem(createLaboratoryItem().itemSlot(), createLaboratoryItem().toItemStack());
+        navigationMenu.setItem(createBetterCallSaulItem().itemSlot(), createBetterCallSaulItem().toItemStack());
 
         player.openInventory(navigationMenu);
     }
